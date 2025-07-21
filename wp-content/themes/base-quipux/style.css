@@ -1,0 +1,16 @@
+/*
+Theme Name: Base Quipux
+Theme URI: https://quipux.com
+Author: Quipux Team
+Author URI: https://quipux.com
+Description: Un tema hijo de WP Bootstrap Starter para el desafío Quipux.
+Version: 1.0.0
+Template: wp-bootstrap-starter
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: base-quipux
+Tags: blog, menú personalizado, imágenes destacadas, comentarios anidados, listo para traducción, barra lateral derecha, fondo personalizado, comercio electrónico, opciones de tema, publicación fija, plantilla de ancho completo
+*/
+
+/* Importar estilos del tema padre */
+@import url("../wp-bootstrap-starter/style.css"); 
