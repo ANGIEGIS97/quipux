@@ -19,6 +19,7 @@ class QuipuxAPI {
     public function __construct() {
         add_action('init', array($this, 'init'));
         add_action('rest_api_init', array($this, 'register_routes'));
+        add_action('after_setup_theme', array($this, 'add_image_sizes'));
     }
     
     public function init() {
@@ -44,6 +45,7 @@ class QuipuxAPI {
         $args = array(
             'labels' => $labels,
             'public' => true,
+            'publicly_queryable' => true,
             'show_ui' => true,
             'show_in_menu' => true,
             'query_var' => true,
@@ -51,11 +53,18 @@ class QuipuxAPI {
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
-            'show_in_rest' => false, // Desactivamos la API v2 automática
+            'menu_position' => 5,
+            'menu_icon' => 'dashicons-megaphone',
+            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions'),
+            'show_in_rest' => true, // Habilitamos Gutenberg y REST API
         );
         
         register_post_type('noticias', $args);
+    }
+    
+    public function add_image_sizes() {
+        add_image_size('news-thumbnail', 370, 250, true);
+        add_image_size('news-featured', 1200, 675, true);
     }
     
     private function flush_rewrite_rules_once() {

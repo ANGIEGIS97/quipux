@@ -1,6 +1,7 @@
 <?php
 /**
  * Plantilla parcial para mostrar publicaciones de noticias
+ * Compatible con el post type 'noticias' registrado por el plugin quipux-api
  */
 ?>
 
