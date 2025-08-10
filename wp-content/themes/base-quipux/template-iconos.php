@@ -9,7 +9,7 @@ get_header(); ?>
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
         <!-- Sección Hero -->
-        <section class="hero-section py-5">
+        <section class="hero-section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8 offset-lg-2 text-center">
@@ -76,12 +76,8 @@ get_header(); ?>
                                         <span>icon-search</span>
                                     </div>
                                     <div class="icon-demo">
-                                        <i class="icon icon-user"></i>
-                                        <span>icon-user</span>
-                                    </div>
-                                    <div class="icon-demo">
-                                        <i class="icon icon-settings"></i>
-                                        <span>icon-settings</span>
+                                        <i class="icon icon-agent-transit"></i>
+                                        <span>icon-agent-transit</span>
                                     </div>
                                 </div>
                             </div>
@@ -133,20 +129,20 @@ get_header(); ?>
                             </div>
                             <div class="card-body">
                                 <h4 class="mb-4">En Botones</h4>
-                                <div class="d-flex flex-wrap gap-3 mb-4">
-                                    <button class="btn btn-primary">
+                                <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                                    <button class="btn btn-primary btn-example">
                                         <i class="icon icon-car me-2"></i>
                                         Reservar Vehículo
                                     </button>
-                                    <button class="btn btn-success">
+                                    <button class="btn btn-success btn-example">
                                         <i class="icon icon-m-groups me-2"></i>
                                         Gestionar Grupo
                                     </button>
-                                    <button class="btn btn-warning">
+                                    <button class="btn btn-warning btn-example">
                                         <i class="icon icon-alert me-2"></i>
                                         Alertas
                                     </button>
-                                    <button class="btn btn-danger">
+                                    <button class="btn btn-danger btn-example">
                                         <i class="icon icon-m-delete me-2"></i>
                                         Eliminar
                                     </button>
@@ -191,19 +187,65 @@ get_header(); ?>
 
         <!-- Estilos adicionales para la demostración de iconos -->
         <style>
+            /* Variables CSS para consistencia */
+            :root {
+                --primary-color: #007bff;
+                --primary-hover: #0056b3;
+                --text-dark: #2d3436;
+                --text-muted: #636e72;
+                --bg-light: #f8f9fa;
+                --shadow-light: rgba(0,0,0,0.05);
+                --shadow-medium: rgba(0,0,0,0.15);
+                --border-radius: 0.5rem;
+                --transition: all 0.3s ease;
+            }
+
+            /* Diseño general */
+            .content-area {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            /* Sección Hero */
             .hero-section {
-                background-color: #f8f9fa;
-                border-bottom: 1px solid #dee2e6;
+                background: none;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid rgba(0,0,0,0.1);
             }
+
+            /* Título principal */
             .main-title {
-                font-size: 2.5rem;
+                font-size: 3rem;
                 font-weight: 700;
-                color: #212529;
-                margin-bottom: 1rem;
+                color: var(--text-dark);
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+                position: relative;
+                display: inline-block;
             }
+
+            .main-title::after {
+                content: '';
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background-color: var(--primary-color);
+                border-radius: 2px;
+            }
+
+            /* Subtítulo */
             .subtitle {
-                font-size: 1.25rem;
-                color: #6c757d;
+                font-size: 1.35rem;
+                color: var(--text-muted);
+                margin-top: 2rem;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
             }
             .icons-demo-section {
                 background-color: white;
@@ -241,6 +283,14 @@ get_header(); ?>
             .me-2 {
                 margin-right: 0.5rem !important;
             }
+            .btn-example {
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                white-space: nowrap;
+                min-width: 140px;
+            }
             .card {
                 border: none;
                 box-shadow: 0 0 15px rgba(0,0,0,0.05);
@@ -257,15 +307,40 @@ get_header(); ?>
             .display-4 {
                 font-size: 3.5rem;
             }
-            @media (max-width: 768px) {
+            /* Diseño Responsivo */
+            @media (max-width: 991.98px) {
                 .main-title {
                     font-size: 2rem;
                 }
+                
+                .hero-section {
+                    padding: 1.5rem 0;
+                }
+            }
+
+            @media (max-width: 767.98px) {
+                .main-title {
+                    font-size: 2rem;
+                }
+                
                 .subtitle {
                     font-size: 1.1rem;
+                    padding: 0 1rem;
                 }
+                
+                .hero-section {
+                    padding: 1rem 0;
+                    margin-bottom: 1.5rem;
+                }
+                
                 .icon-demo {
                     min-width: 100px;
+                }
+            }
+
+            @media (max-width: 575.98px) {
+                .main-title {
+                    font-size: 2rem;
                 }
             }
         </style>
